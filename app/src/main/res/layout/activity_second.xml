@@ -6,16 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity"
     android:background="@color/background"
-    android:padding="13dp">
+    android:padding="11dp">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="278dp"
+        android:layout_width="match_parent"
         android:layout_height="75dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:autoSizeTextType="none"
         android:text="Конвертер единиц информации"
-        android:textSize="25dp"
+        android:textSize="28dp"
         android:textStyle="bold"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -28,21 +28,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="135dp"
+        android:layout_marginTop="175dp"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="MissingConstraints">
-        <EditText
-            android:id="@+id/inputValues"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:paddingLeft="10dp"
-            android:textSize="20dp"
-            android:background="@drawable/text"
-            android:hint="@string/inputNumbers"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="306dp"
-            android:layout_margin="9dp"
-            tools:ignore="MissingConstraints" />
+            android:layout_height="wrap_content"
+            android:background="@drawable/text">
+            <EditText
+                android:id="@+id/inputValues"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:textSize="20dp"
+
+                android:hint="@string/inputNumbers"
+                android:inputType="number"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="306dp"
+                tools:ignore="MissingConstraints" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,17 +56,19 @@
             android:orientation="horizontal"
             android:weightSum="2">
             <TextView
-                android:layout_margin="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp"
                 android:layout_width="wrap_content"
-                android:text="Из"
+                android:text="@string/from"
                 android:textSize="18dp"
                 android:textColor="@color/white"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"/>
             <TextView
-                android:layout_margin="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="9dp"
                 android:layout_width="wrap_content"
-                android:text="В"
+                android:text="@string/in"
                 android:textSize="18dp"
                 android:textColor="@color/white"
                 android:layout_height="wrap_content"
@@ -70,48 +78,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:weightSum="2">
+            android:weightSum="2"
+            android:layout_marginBottom="9dp">
             <Spinner
                 android:id="@+id/spinnerFrom"
                 android:background="@drawable/text"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:paddingLeft="10dp"
                 android:textSize="20dp"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="235dp"
-                android:layout_margin="9dp"
-                android:layout_marginLeft="20dp"
+                android:layout_marginRight="9dp"
                 android:layout_weight="1"/>
             <Spinner
                 android:id="@+id/spinnerIn"
                 android:background="@drawable/text"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="50dp"
                 android:paddingLeft="10dp"
                 android:textSize="20dp"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="235dp"
-                android:layout_margin="9dp"
                 android:layout_weight="1"/>
         </LinearLayout>
-        <EditText
-            android:background="@drawable/text"
-            android:id="@+id/result"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:paddingLeft="10dp"
-            android:textSize="20dp"
-            android:hint="Результат"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="306dp"
-            tools:ignore="MissingConstraints"
-            android:focusable="false"
-            android:layout_margin="9dp"
-            android:focusableInTouchMode="false"
-            />
+            android:layout_height="wrap_content"
+            android:background="@drawable/text">
+            <EditText
+                android:id="@+id/result"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="10dp"
+                android:textSize="20dp"
+                android:hint="@string/result"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="306dp"
+                tools:ignore="MissingConstraints"
+                android:focusable="false"
+                android:focusableInTouchMode="false"/>
+        </LinearLayout>
+
     </LinearLayout>
 
 
@@ -123,7 +133,7 @@
         android:text="@string/calculate"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="17dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         android:onClick="toCalculate"
         android:layout_marginBottom="35dp"

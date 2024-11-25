@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -39,9 +40,22 @@ class SecondActivity : AppCompatActivity() {
             val inputUnitValue = inputUnit.selectedItemPosition
             val outputUnitValue = outputUnit.selectedItemPosition
 
+
             val result = convert(number, inputUnitValue, outputUnitValue)
 
             outputResult.setText(result.toString())
+
+            val intent = Intent(this, ThirdActivity::class.java)
+            intent.putExtra("value", number.toString())
+            intent.putExtra("result", result.toString())
+
+            Toast.makeText(this, "Совершается переход...", Toast.LENGTH_SHORT).show()
+            Handler().postDelayed({
+                startActivity(intent)
+            }, 4000)
+
+        } else {
+            Toast.makeText(this, "Введите корректное число", Toast.LENGTH_SHORT).show()
         }
     }
 

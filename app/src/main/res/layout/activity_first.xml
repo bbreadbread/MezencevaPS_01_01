@@ -1,76 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background">
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textAlignment="center"
-            android:text="@string/information"
-            android:textColor="@color/white"
-            android:textSize="28dp"
-            android:textStyle="bold"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="24dp"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:gravity="center">
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:layout_editor_absoluteX="0dp">
 
         <ImageView
             android:layout_width="250dp"
-            android:layout_height="220dp"
-            android:background="@drawable/logo"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"/>
+            android:layout_height="250dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/contract" />
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
         android:orientation="vertical"
-        android:gravity="center">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:layout_editor_absoluteX="16dp">
+
         <EditText
             android:id="@+id/log"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:paddingStart="15dp"
-            android:textSize="18dp"
+            android:layout_marginBottom="25dp"
             android:background="@drawable/text"
             android:hint="@string/login"
-            android:layout_marginBottom="25dp"/>
+            android:paddingStart="15dp"
+            android:textSize="18dp" />
+
         <EditText
             android:id="@+id/pass"
             android:layout_width="300dp"
             android:layout_height="50dp"
-            android:paddingStart="15dp"
-            android:textSize="18dp"
             android:background="@drawable/text"
             android:hint="@string/password"
-            android:layout_marginBottom="50dp"/>
+            android:inputType="textPassword"
+            android:paddingStart="15dp"
+            android:textSize="18dp" />
 
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:textAlignment="center"
-            android:padding="12dp"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:background="@drawable/buttons"
-            android:text="@string/start"
-            android:onClick="toGo"
-            android:textSize="18dp"
-            android:textStyle="bold"/>
+
     </LinearLayout>
 
-</LinearLayout>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/buttons"
+        android:onClick="toGo"
+        android:text="@string/start"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="@string/information"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

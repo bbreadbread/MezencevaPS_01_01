@@ -1,7 +1,6 @@
 <resources>
-    <string name="app_name">MezencevaPS_01_01</string>
+    <string name="app_name">Конвертер единиц информации</string>
     <string name="starts">Начать</string>
-    <string name="calculate">Вычислить</string>
     <string name="inputNumbers">Введите число</string>
 
     <string name="information">Конвертер единиц информации</string>
@@ -9,13 +8,13 @@
     <string name="password">Введите пароль</string>
     <string name="start">Начать</string>
 
-    <string name="selection">Выбор единиц информации</string>
     <string name="input">Введите число</string>
     <string name="from">Из</string>
     <string name="in">В</string>
-    <string name="rez">Результат</string>
-    <string name="v">Вычислить</string>
+    <string name="result">Результат</string>
+    <string name="calculate">Вычислить</string>
 
     <string name="end">Введенное число</string>
     <string name="regist_text">Регистрация</string>
+    <string name="final_">Полученное значение</string>
 </resources>
